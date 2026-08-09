@@ -618,8 +618,54 @@ function cambiarIdioma(idioma) {
     destinos[3].querySelector("p").textContent = idioma === "en"
         ? "An Andean landscape characterized by its amazing natural colors."
         : "Un paisaje andino caracterizado por sus sorprendentes colores naturales.";
+
+
+            // CULTURA
+    const cultura = document.querySelectorAll("#cultura .card");
+
+    cultura[0].querySelector("h3").textContent = "☀️ Inti Raymi";
+    cultura[0].querySelector("p").textContent = idioma === "en"
+        ? "A celebration dedicated to the Sun held every June 24 in Cusco."
+        : "Celebración dedicada al Sol que se realiza cada 24 de junio en Cusco.";
+
+    cultura[1].querySelector("h3").textContent = "🎉 Corpus Christi";
+    cultura[1].querySelector("p").textContent = idioma === "en"
+        ? "One of the most important religious and cultural celebrations in the city."
+        : "Una de las celebraciones religiosas y culturales más importantes de la ciudad.";
+
+    cultura[2].querySelector("h3").textContent = idioma === "en"
+        ? "🦙 Andean Tradition"
+        : "🦙 Tradición andina";
+
+    cultura[2].querySelector("p").textContent = idioma === "en"
+        ? "Music, textiles, dances and customs that are part of Cusco's cultural identity."
+        : "Música, textiles, danzas y costumbres que forman parte de la identidad cultural cusqueña.";
+
+            // GASTRONOMÍA
+const gastronomia = document.querySelectorAll("#gastronomia .info-box");
+
+gastronomia[0].querySelector("h3").textContent = "Chiriuchu";
+gastronomia[0].querySelector("p").textContent = idioma === "en"
+    ? "A traditional Cusco dish especially associated with Corpus Christi celebrations."
+    : "Plato tradicional cusqueño especialmente asociado a las celebraciones del Corpus Christi.";
+
+gastronomia[1].querySelector("h3").textContent = idioma === "en"
+    ? "Corn with cheese"
+    : "Choclo con queso";
+
+gastronomia[1].querySelector("p").textContent = idioma === "en"
+    ? "A simple and traditional combination from Andean cuisine."
+    : "Una combinación sencilla y tradicional de la gastronomía andina.";
+
+gastronomia[2].querySelector("h3").textContent = idioma === "en"
+    ? "Andean potato"
+    : "Papa andina";
+
+gastronomia[2].querySelector("p").textContent = idioma === "en"
+    ? "A fundamental product of Andean food and culture."
+    : "Producto fundamental de la alimentación y cultura de los Andes.";
         }
-        
+    
     </script>
 
 </body>

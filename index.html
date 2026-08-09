@@ -588,6 +588,10 @@ function cambiarIdioma(idioma) {
 
     document.querySelector("#mapa .section-title h2").textContent = t.mapaTitulo;
     document.querySelector("#mapa .section-title p").textContent = t.mapaSubtitulo;
+
+document.querySelector("footer p").innerHTML = idioma === "en"
+    ? '© 2026 <span>Discover Cusco</span> · Smart Tourism School Project'
+    : '© 2026 <span>Descubre Cusco</span> · Proyecto escolar de Turismo Inteligente';
     
     traducirTarjetas(idioma);
         }
@@ -664,6 +668,34 @@ gastronomia[2].querySelector("h3").textContent = idioma === "en"
 gastronomia[2].querySelector("p").textContent = idioma === "en"
     ? "A fundamental product of Andean food and culture."
     : "Producto fundamental de la alimentación y cultura de los Andes.";
+
+                // ¿POR QUÉ VISITAR CUSCO?
+    const info = document.querySelectorAll("section .info-box");
+
+    info[3].querySelector("h3").textContent = idioma === "en"
+        ? "History"
+        : "Historia";
+
+    info[3].querySelector("p").textContent = idioma === "en"
+        ? "Discover the legacy of the Inca civilization."
+        : "Conoce el legado de la civilización inca.";
+
+    info[4].querySelector("h3").textContent = idioma === "en"
+        ? "Nature"
+        : "Naturaleza";
+
+    info[4].querySelector("p").textContent = idioma === "en"
+        ? "Explore mountains, valleys and unique landscapes."
+        : "Explora montañas, valles y paisajes únicos.";
+
+    info[5].querySelector("h3").textContent = idioma === "en"
+        ? "Culture"
+        : "Cultura";
+
+    info[5].querySelector("p").textContent = idioma === "en"
+        ? "Discover traditions that are still alive today."
+        : "Descubre tradiciones que siguen vivas hasta hoy.";
+
         }
     
     </script>

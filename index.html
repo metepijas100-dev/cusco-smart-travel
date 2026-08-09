@@ -249,7 +249,29 @@
         section {
             padding: 60px 5%;
         }
-    }
+        /* BOTÓN VER MÁS */
+.ver-mas {
+    margin-top: 15px;
+    padding: 10px 18px;
+    border: none;
+    border-radius: 20px;
+    background: #e6b325;
+    color: #222;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.info-extra {
+    display: none;
+    margin-top: 12px;
+    color: #555;
+    line-height: 1.5;
+}
+
+.info-extra.mostrar {
+    display: block;
+}
+    
 </style>
 
 </head><body><!-- NAVEGACIÓN -->
@@ -314,6 +336,13 @@
                     Una de las maravillas del mundo y uno de los
                     mayores símbolos de la civilización inca.
                 </p>
+                <button class="ver-mas" onclick="mostrarInfo(this)">
+    Ver más
+</button>
+
+<div class="info-extra">
+    <p>Ubicado en la provincia de Urubamba, Machu Picchu es uno de los principales atractivos turísticos del Cusco.</p>
+</div>
             </div>
         </article>
 
@@ -326,6 +355,16 @@
                     Montañas, pueblos tradicionales, agricultura
                     andina y antiguos sitios arqueológicos.
                 </p>
+                <button class="ver-mas" onclick="mostrarInfo(this)">
+    Ver más
+</button>
+
+<div class="info-extra">
+    <p>
+        El Valle Sagrado destaca por sus paisajes andinos,
+        pueblos tradicionales y antiguos centros arqueológicos.
+    </p>
+</div>
             </div>
         </article>
 
@@ -338,6 +377,17 @@
                     Impresionante complejo arqueológico construido
                     con enormes bloques de piedra.
                 </p>
+                <button class="ver-mas" onclick="mostrarInfo(this)">
+    Ver más
+</button>
+
+<div class="info-extra">
+    <p>
+        Un impresionante complejo arqueológico ubicado
+        cerca de la ciudad del Cusco, famoso por sus
+        enormes bloques de piedra.
+    </p>
+</div>
             </div>
         </article>
 
@@ -350,6 +400,16 @@
                     Un paisaje andino caracterizado por sus
                     sorprendentes colores naturales.
                 </p>
+                <button class="ver-mas" onclick="mostrarInfo(this)">
+    Ver más
+</button>
+
+<div class="info-extra">
+    <p>
+        También conocida como Vinicunca, destaca por sus
+        impresionantes colores naturales y sus paisajes andinos.
+    </p>
+</div>
             </div>
         </article>
 
@@ -712,6 +772,16 @@ gastronomia[2].querySelector("p").textContent = idioma === "en"
         ? "Discover traditions that are still alive today."
         : "Descubre tradiciones que siguen vivas hasta hoy.";
 
+            function mostrarInfo(boton) {
+    const informacion = boton.nextElementSibling;
+
+    informacion.classList.toggle("mostrar");
+
+    boton.textContent = informacion.classList.contains("mostrar")
+        ? "Ocultar"
+        : "Ver más";
+        }
+            
         }
     
     </script>

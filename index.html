@@ -588,7 +588,37 @@ function cambiarIdioma(idioma) {
 
     document.querySelector("#mapa .section-title h2").textContent = t.mapaTitulo;
     document.querySelector("#mapa .section-title p").textContent = t.mapaSubtitulo;
+    traducirTarjetas(idioma);
         }
+        function traducirTarjetas(idioma) {
+
+    const destinos = document.querySelectorAll("#destinos .card");
+
+    destinos[0].querySelector("p").textContent = idioma === "en"
+        ? "One of the wonders of the world and one of the greatest symbols of the Inca civilization."
+        : "Una de las maravillas del mundo y uno de los mayores símbolos de la civilización inca.";
+
+    destinos[1].querySelector("h3").textContent = idioma === "en"
+        ? "Sacred Valley"
+        : "Valle Sagrado";
+
+    destinos[1].querySelector("p").textContent = idioma === "en"
+        ? "Mountains, traditional villages, Andean agriculture and ancient archaeological sites."
+        : "Montañas, pueblos tradicionales, agricultura andina y antiguos sitios arqueológicos.";
+
+    destinos[2].querySelector("p").textContent = idioma === "en"
+        ? "An impressive archaeological complex built with enormous stone blocks."
+        : "Impresionante complejo arqueológico construido con enormes bloques de piedra.";
+
+    destinos[3].querySelector("h3").textContent = idioma === "en"
+        ? "Rainbow Mountain"
+        : "Montaña de 7 Colores";
+
+    destinos[3].querySelector("p").textContent = idioma === "en"
+        ? "An Andean landscape characterized by its amazing natural colors."
+        : "Un paisaje andino caracterizado por sus sorprendentes colores naturales.";
+        }
+        
     </script>
 
 </body>

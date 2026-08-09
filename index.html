@@ -593,13 +593,21 @@ document.querySelector("footer p").innerHTML = idioma === "en"
     ? '© 2026 <span>Discover Cusco</span> · Smart Tourism School Project'
     : '© 2026 <span>Descubre Cusco</span> · Proyecto escolar de Turismo Inteligente';
 
-    document.querySelectorAll(".section-title h2")[4].textContent = idioma === "en"
-    ? "✨ Why visit Cusco?"
-    : "✨ ¿Por qué visitar Cusco?";
+    document.querySelectorAll("section .section-title h2").forEach(function(titulo) {
+    if (titulo.textContent.includes("¿Por qué visitar Cusco?") || titulo.textContent.includes("Why visit Cusco?")) {
+        titulo.textContent = idioma === "en"
+            ? "✨ Why visit Cusco?"
+            : "✨ ¿Por qué visitar Cusco?";
+    }
+});
 
-document.querySelectorAll(".section-title p")[4].textContent = idioma === "en"
-    ? "An experience that combines nature, history and culture."
-    : "Una experiencia que combina naturaleza, historia y cultura.";
+document.querySelectorAll("section .section-title p").forEach(function(texto) {
+    if (texto.textContent.includes("Una experiencia que combina") || texto.textContent.includes("An experience that combines")) {
+        texto.textContent = idioma === "en"
+            ? "An experience that combines nature, history and culture."
+            : "Una experiencia que combina naturaleza, historia y cultura.";
+    }
+});
     
     traducirTarjetas(idioma);
         }

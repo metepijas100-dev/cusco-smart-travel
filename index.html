@@ -39,6 +39,25 @@
     .logo span {
         color: #e6b325;
     }
+.idiomas {
+    display: flex;
+    gap: 6px;
+}
+
+.idiomas button {
+    background: transparent;
+    color: white;
+    border: 1px solid #e6b325;
+    border-radius: 20px;
+    padding: 6px 10px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.idiomas button:hover {
+    background: #e6b325;
+    color: #222;
+}
 
     nav ul {
         list-style: none;
@@ -236,7 +255,12 @@
 </head><body><!-- NAVEGACIÓN -->
 <nav>
     <div class="logo">Cusco<span>✦</span></div>
-
+    
+<div class="idiomas">
+    <button onclick="cambiarIdioma('es')">🇪🇸 ES</button>
+    <button onclick="cambiarIdioma('en')">🇬🇧 EN</button>
+</div>
+    
     <ul>
         <li><a href="#inicio">Inicio</a></li>
         <li><a href="#destinos">Destinos</a></li>
@@ -498,6 +522,73 @@ function buscarDestino() {
         }
     });
 }
+
+        const textos = {
+    es: {
+        inicio: "Inicio",
+        destinos: "Destinos",
+        cultura: "Cultura",
+        gastronomia: "Gastronomía",
+        titulo: "Descubre Cusco",
+        descripcion: "La ciudad imperial donde la historia, la cultura y los paisajes se encuentran.",
+        explorar: "Explorar destinos",
+        buscar: "🔎 Busca un lugar turístico...",
+        destinosTitulo: "🏔️ Destinos imperdibles",
+        destinosSubtitulo: "Lugares que no puedes dejar de conocer.",
+        culturaTitulo: "🎭 Cultura cusqueña",
+        culturaSubtitulo: "Tradiciones que mantienen viva la historia de Cusco.",
+        gastronomiaTitulo: "🍲 Gastronomía",
+        gastronomiaSubtitulo: "Sabores tradicionales de nuestra región.",
+        mapaTitulo: "🗺️ Explora Cusco",
+        mapaSubtitulo: "Ubica algunos de los principales lugares turísticos de nuestra ciudad."
+    },
+
+    en: {
+        inicio: "Home",
+        destinos: "Destinations",
+        cultura: "Culture",
+        gastronomia: "Gastronomy",
+        titulo: "Discover Cusco",
+        descripcion: "The imperial city where history, culture and landscapes come together.",
+        explorar: "Explore destinations",
+        buscar: "🔎 Search for a tourist place...",
+        destinosTitulo: "🏔️ Must-see destinations",
+        destinosSubtitulo: "Places you cannot miss.",
+        culturaTitulo: "🎭 Cusco culture",
+        culturaSubtitulo: "Traditions that keep the history of Cusco alive.",
+        gastronomiaTitulo: "🍲 Gastronomy",
+        gastronomiaSubtitulo: "Traditional flavors of our region.",
+        mapaTitulo: "🗺️ Explore Cusco",
+        mapaSubtitulo: "Locate some of the main tourist attractions in our city."
+    }
+};
+
+function cambiarIdioma(idioma) {
+    const t = textos[idioma];
+
+    document.querySelector('a[href="#inicio"]').textContent = t.inicio;
+    document.querySelector('a[href="#destinos"]').textContent = t.destinos;
+    document.querySelector('a[href="#cultura"]').textContent = t.cultura;
+    document.querySelector('a[href="#gastronomia"]').textContent = t.gastronomia;
+
+    document.querySelector(".hero h1").textContent = t.titulo;
+    document.querySelector(".hero p").textContent = t.descripcion;
+    document.querySelector(".hero .button").textContent = t.explorar;
+
+    document.getElementById("buscador").placeholder = t.buscar;
+
+    document.querySelector("#destinos .section-title h2").textContent = t.destinosTitulo;
+    document.querySelector("#destinos .section-title p").textContent = t.destinosSubtitulo;
+
+    document.querySelector("#cultura .section-title h2").textContent = t.culturaTitulo;
+    document.querySelector("#cultura .section-title p").textContent = t.culturaSubtitulo;
+
+    document.querySelector("#gastronomia .section-title h2").textContent = t.gastronomiaTitulo;
+    document.querySelector("#gastronomia .section-title p").textContent = t.gastronomiaSubtitulo;
+
+    document.querySelector("#mapa .section-title h2").textContent = t.mapaTitulo;
+    document.querySelector("#mapa .section-title p").textContent = t.mapaSubtitulo;
+        }
     </script>
 
 </body>

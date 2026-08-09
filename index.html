@@ -483,5 +483,22 @@
     </p>
 </footer>
 
+    <script>
+function buscarDestino() {
+    let texto = document.getElementById("buscador").value.toLowerCase();
+    let tarjetas = document.querySelectorAll(".card");
+
+    tarjetas.forEach(function(tarjeta) {
+        let contenido = tarjeta.innerText.toLowerCase();
+
+        if (contenido.includes(texto)) {
+            tarjeta.style.display = "";
+        } else {
+            tarjeta.style.display = "none";
+        }
+    });
+}
+    </script>
+
 </body>
     </html>

@@ -699,6 +699,33 @@ document.querySelectorAll("section .section-title p").forEach(function(texto) {
         ? "An Andean landscape characterized by its amazing natural colors."
         : "Un paisaje andino caracterizado por sus sorprendentes colores naturales.";
 
+                // INFORMACIÓN EXTRA DE LOS DESTINOS
+    const infoExtra = document.querySelectorAll("#destinos .info-extra");
+
+    infoExtra[0].querySelector("p").textContent = idioma === "en"
+        ? "Located in the province of Urubamba, Machu Picchu is one of the main tourist attractions in Cusco."
+        : "Ubicado en la provincia de Urubamba, Machu Picchu es uno de los principales atractivos turísticos del Cusco.";
+
+    infoExtra[1].querySelector("p").textContent = idioma === "en"
+        ? "The Sacred Valley stands out for its Andean landscapes, traditional villages and ancient archaeological sites."
+        : "El Valle Sagrado destaca por sus paisajes andinos, pueblos tradicionales y antiguos centros arqueológicos.";
+
+    infoExtra[2].querySelector("p").textContent = idioma === "en"
+        ? "An impressive archaeological complex located near the city of Cusco, famous for its enormous stone blocks."
+        : "Un impresionante complejo arqueológico ubicado cerca de la ciudad del Cusco, famoso por sus enormes bloques de piedra.";
+
+    infoExtra[3].querySelector("p").textContent = idioma === "en"
+        ? "Also known as Vinicunca, it stands out for its impressive natural colors and Andean landscapes."
+        : "También conocida como Vinicunca, destaca por sus impresionantes colores naturales y sus paisajes andinos.";
+
+    document.querySelectorAll("#destinos .ver-mas").forEach(function(boton) {
+        const informacion = boton.nextElementSibling;
+
+        boton.textContent = informacion.classList.contains("mostrar")
+            ? (idioma === "en" ? "Hide" : "Ocultar")
+            : (idioma === "en" ? "See more" : "Ver más");
+    });
+
 
             // CULTURA
     const cultura = document.querySelectorAll("#cultura .card");
@@ -772,17 +799,19 @@ gastronomia[2].querySelector("p").textContent = idioma === "en"
         ? "Discover traditions that are still alive today."
         : "Descubre tradiciones que siguen vivas hasta hoy.";
         }
-            function mostrarInfo(boton) {
+         function mostrarInfo(boton) {
     const informacion = boton.nextElementSibling;
 
     informacion.classList.toggle("mostrar");
 
+    const idioma = document.documentElement.lang;
+
     boton.textContent = informacion.classList.contains("mostrar")
-        ? "Ocultar"
-        : "Ver más";
-            
-        }
-    
+        ? (idioma === "en" ? "Hide" : "Ocultar")
+        : (idioma === "en" ? "See more" : "Ver más");
+       
+         }
+
     </script>
 
 </body>
